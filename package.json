@@ -1,0 +1,21 @@
+{
+    "name":        "keyed_list",
+    "version":     "0.1.0",
+    
+    "author":      "Benedict Eastaugh <benedict@eastaugh.net> (http://extralogical.net/)",
+    "homepage":    "https://github.com/othermedia/keyedlist",
+    
+    "description": "A keyed, enumerable list data type.",
+    "keywords":    "data structure array enumerable keys jsclass",
+    
+    "main":        "src/keyed_list.js",
+    
+    "repository": {
+        "type": "git",
+        "url":  "git://github.com/othermedia/keyedlist.git"
+    },
+    
+    "dependencies": {
+        "js.class": ">= 3.0.0"
+    }
+}
