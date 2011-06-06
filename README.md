@@ -4,21 +4,26 @@ Keyed List
 An enumerable list where each element is also accessible via a key provided by
 the user.
 
-    var list = new KeyedList({
-        foo: new Foo(),
-        bar: new Bar()
+    var dates = new KeyedList({
+        birth: 1533,
+        coronation: 1558
     });
     
-    list.keys(); // -> ['foo', 'bar']
+    dates.keys(); // -> ['birth', 'coronation']
+    dates.values(); // -> [1533, 1558]
     
-    list.store('baz', new Baz());
+    dates.store('death', 1603);
     
-    list.getNextKey('foo') // -> 'bar'
-    list.getPreviousKey('foo') // -> 'baz'
+    dates.getNext('coronation'); // -> 1603
+    dates.getNextKey('coronation'); // -> 'death'
     
-    list.remove('bar');
+    dates.getPrevious('coronation'); // -> 1533
+    dates.getPreviousKey('coronation'); // -> 'birth'
     
-    list.keys(); // -> ['foo', 'baz']
+    dates.remove('coronation');
+    
+    dates.keys(); // -> ['birth', 'death']
+    dates.values(); // -> [1533, 1603]
 
 This library is built with James Coglan's [JS.Class] and its API borrows a lot
 from [JS.OrderedHash].
