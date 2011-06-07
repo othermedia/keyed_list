@@ -179,18 +179,14 @@ JS.ENV.KeyedListSpec = JS.Test.describe('KeyedList', function() { with (this) {
     
     it('should normalise keys where possible, and fail where not', function() { with(this) {
         var list       = new KeyedList(),
-            str        = 'This object can be stringified!',
-            stringable = {toString: function() { return str; }};
+            stringable = {toString: function() { return 'Some string.'; }};
         
-        list.store(stringable, 9999);
+        list.store(stringable, 1001);
         
-        assertEqual(9999, list.get(stringable));
-        
-        delete stringable.toString;
-        delete stringable.constructor.prototype.toString;
+        assertEqual(1001, list.get(stringable));
         
         assertThrows(Error, function() {
-            list.get(stringable);
+            list.store(null, 1002);
         });
     }});
 }});
