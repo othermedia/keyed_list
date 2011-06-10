@@ -144,3 +144,7 @@ KeyedList = new JS.Class('KeyedList', {
         }
     }
 });
+
+if (typeof module == 'object') {
+    module.exports = KeyedList;
+}
