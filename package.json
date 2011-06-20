@@ -1,10 +1,10 @@
 { "name"          : "keyed_list"
 , "description"   : "A keyed, enumerable list data type."
-, "homepage"      : "https://github.com/othermedia/keyedlist"
+, "homepage"      : "https://github.com/othermedia/keyed_list"
 , "author"        : "Benedict Eastaugh <benedict@eastaugh.net> (http://extralogical.net/)"
 , "keywords"      : ["data-structures", "enumerable"]
 
-, "version"       : "1.0.1"
+, "version"       : "1.0.2"
 , "engines"       : {"node": ">=0.4.0"}
 , "main"          :  "src/keyed_list.js"
 , "dependencies"  : { "jsclass": ">= 3.0.1" }
@@ -12,6 +12,6 @@
 , "bugs"          : "http://github.com/othermedia/keyed_list/issues"
 
 , "repository"    : { "type" : "git"
-                    , "url"  :  "git://github.com/othermedia/keyedlist.git"
+                    , "url"  :  "git://github.com/othermedia/keyed_list.git"
                     }
 }
