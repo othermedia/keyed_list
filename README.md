@@ -26,7 +26,8 @@ the user.
     dates.values(); // -> [1533, 1603]
 
 This library is built with James Coglan's [JS.Class] and its API borrows a lot
-from [JS.OrderedHash].
+from [JS.OrderedHash]. It's released under the BSD license; please see the
+`LICENSE` file for details.
 
 [JS.Class]: http://jsclass.jcoglan.com/
 [JS.OrderedHash]: http://jsclass.jcoglan.com/hash.html

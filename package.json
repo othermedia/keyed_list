@@ -11,7 +11,12 @@
 
 , "bugs"          : "http://github.com/othermedia/keyed_list/issues"
 
-, "repository"    : { "type" : "git"
-                    , "url"  :  "git://github.com/othermedia/keyed_list.git"
+, "licenses"      : [ { "type" : "BSD"
+                      , "url"  : "http://www.opensource.org/licenses/BSD-3-Clause"
+                      }
+                    ]
+
+, "repository"    : { "type"   : "git"
+                    , "url"    :  "git://github.com/othermedia/keyed_list.git"
                     }
 }
