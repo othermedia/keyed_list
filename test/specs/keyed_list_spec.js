@@ -14,6 +14,24 @@ JS.ENV.KeyedListSpec = JS.Test.describe('KeyedList', function() { with (this) {
         assertEqual(values, list.values());
     }});
     
+    it('should only add properties of the object passed to the constructor, not those of the object\'s prototype', function() { with(this) {
+        var objA = {foo: 100, bar: 200, baz: 300},
+            objB = {},
+            xs, ys;
+        
+        xs = new KeyedList(objA);
+        
+        assertEqual(3, xs.length);
+        
+        objB.foo = 19;
+        objB.bar = 74;
+        objB.constructor.prototype.bar = 52;
+        
+        ys = new KeyedList(objB);
+        
+        assertEqual(2, ys.length);
+    }});
+    
     it('should iterate over values in insertion order', function() { with(this) {
         var list   = new KeyedList({foo: 100, bar: 200, baz: 300}),
             values = [100, 300, 400, 500];
