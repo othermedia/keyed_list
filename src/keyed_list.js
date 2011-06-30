@@ -25,9 +25,11 @@ KeyedList = new JS.Class('KeyedList', {
     },
     
     remove: function(key) {
-            key = this.normaliseKey(key);
+            key   = this.normaliseKey(key);
         var elem  = this._values[key],
             index = this._keys.indexOf(key);
+        
+        if (index < 0) return null;
         
         this._keys.splice(index, 1);
         this.length = this._keys.length;

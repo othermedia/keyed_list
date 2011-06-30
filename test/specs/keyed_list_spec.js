@@ -96,6 +96,31 @@ JS.ENV.KeyedListSpec = JS.Test.describe('KeyedList', function() { with (this) {
         assertEqual([99], (new KeyedList()).push('wibble', 99).values());
     }});
     
+    it('should return removed elements', function() { with(this) {
+        var list = new KeyedList(),
+            key  = 'mykey',
+            elem = {};
+        
+        list.store(key, elem);
+        
+        assertEqual(elem, list.remove(key));
+    }});
+    
+    it('should return null when attempting to remove with an unused key', function() { with(this) {
+        var list = new KeyedList();
+        
+        assertNull(list.remove('nexistepas'));
+    }});
+    
+    it('should not remove or reorder elements when attempting to remove with an unused key', function() { with(this) {
+        var list   = new KeyedList({foo: 100, bar: 200, baz: 300}),
+            values = list.values();
+        
+        list.remove('nexistepas');
+        
+        assertEqual(values, list.values());
+    }});
+    
     it('should not throw errors when there are no elements to remove', function() { with(this) {
         var list = new KeyedList();
         
