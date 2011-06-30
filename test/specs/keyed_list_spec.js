@@ -51,7 +51,7 @@ JS.ENV.KeyedListSpec = JS.Test.describe('KeyedList', function() { with (this) {
         assertEqual(200, list.get('bar'));
         assertEqual(100, list.get('foo'));
         assertEqual(300, list.get('baz'));
-        assertEqual(undefined, list.get('quux'));
+        assertKindOf('undefined', list.get('quux'));
     }});
     
     it('should return the element inserted longest ago when shift is called', function() { with(this) {
@@ -63,7 +63,7 @@ JS.ENV.KeyedListSpec = JS.Test.describe('KeyedList', function() { with (this) {
         assertEqual(foo, list.shift());
         assertEqual(bar, list.shift());
         assertEqual(baz, list.shift());
-        assertEqual(null, list.shift());
+        assertNull(list.shift());
     }});
     
     it('should add new elements to the beginning of the list when unshift is called', function() { with(this) {
@@ -84,7 +84,7 @@ JS.ENV.KeyedListSpec = JS.Test.describe('KeyedList', function() { with (this) {
         assertEqual(baz, list.pop());
         assertEqual(bar, list.pop());
         assertEqual(foo, list.pop());
-        assertEqual(null, list.pop());
+        assertNull(list.pop());
     }});
     
     it('should add new elements to the end of the list when push is called', function() { with(this) {
